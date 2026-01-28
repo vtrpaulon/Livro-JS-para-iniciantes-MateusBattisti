@@ -1,17 +1,41 @@
-let campoNome = document.getElementById('name');
+// Captura dos elementos
+const formulario = document.getElementById('meuFormulario');
+const campoNome = document.getElementById('nome');
+const campoCheckBox = document.getElementById('meuCheckBox');
+const campoSelect = document.getElementById('meuSelect');
 
-//Le o valor atual do campo
-let nomeAtual = campoNome.value;
+// Evento de envio
+formulario.addEventListener('submit', function (event) {
+    event.preventDefault(); // impede envio automático
 
-//Define um novo valor para o campo
-campoNome.value = 'Novo Nome';
+    // === VALIDAÇÃO DO NOME ===
+    if (campoNome.value.trim() === '') {
+        alert('O nome é obrigatório.');
+        campoNome.focus();
+        return;
+    }
 
-let campoCheckBox = document.getElementById('meuCheckBox');
+    // === VALIDAÇÃO DO CHECKBOX ===
+    if (!campoCheckBox.checked) {
+        alert('Você precisa aceitar os termos.');
+        return;
+    }
 
-//Verifica se a caixa de seleção esta marcada
-let isChecked = campoCheckBox.checked;
+    // === VALIDAÇÃO DO SELECT ===
+    if (campoSelect.value === '') {
+        alert('Escolha uma opção.');
+        campoSelect.focus();
+        return;
+    }
 
-//Marca a caixa de seleção
-campoCheckBox.checked = true;
-//Desmarca a caixa de seleção
-campoCheckBox.checked = false;
+    // === SE PASSOU EM TODAS ===
+    alert('Formulário validado com sucesso!');
+
+    // EXEMPLOS DE MANIPULAÇÃO
+    console.log('Nome:', campoNome.value);
+    console.log('Aceitou termos:', campoCheckBox.checked);
+    console.log('Opção escolhida:', campoSelect.value);
+
+    // Limpar formulário (opcional)
+    formulario.reset();
+});

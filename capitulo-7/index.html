@@ -1,23 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manipulando campos de formularios</title>
+    <title>Validação de Formulário</title>
     <script src="script.js" defer></script>
 </head>
 <body>
-    <form id="meuFormulario">
-        <label for="nome">Nome</label>
-        <input type="text" id="nome" name="nome"><br>
-        <input type="checkbox" id="meuCheckBox" name="meuCheckBox">
-        <label for="meuCheckBox">Aceito os termos</label><br>
-        <label for="meuSelect">Escolha uma opção:</label>
-        <select name="meuSelect" id="meuSelect">
-            <option value="opcao1">Opção 1</option>
-            <option value="opcao2">Opção 2</option>
-            <option value="opcao3">Opção 3</option>
-        </select>
-    </form>
+
+<form id="meuFormulario">
+
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome">
+    <br><br>
+
+    <input type="checkbox" id="meuCheckBox">
+    <label for="meuCheckBox">Aceito os termos</label>
+    <br><br>
+
+    <label for="meuSelect">Escolha uma opção:</label>
+    <select id="meuSelect">
+        <option value="">-- Selecione --</option>
+        <option value="opcao1">Opção 1</option>
+        <option value="opcao2">Opção 2</option>
+        <option value="opcao3">Opção 3</option>
+    </select>
+    <br><br>
+
+    <button type="submit">Enviar</button>
+
+</form>
+
 </body>
 </html>
