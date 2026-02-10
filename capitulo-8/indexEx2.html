@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex2</title>
+</head>
+<body>
+    <form action="">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome">
+        <button type="button" id="botao">Salvar</button>
+    </form>
+    <script>
+        document.getElementById('botao').addEventListener('click', function() {
+        let valor = document.getElementById('nome').value;
+        console.log(valor);
+        localStorage.setItem('meuValor', valor);
+    });
+    </script>
+</body>
+</html>

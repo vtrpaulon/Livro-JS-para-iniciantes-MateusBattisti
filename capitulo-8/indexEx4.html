@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome">
+        <button type="button" id="botao">Salvar</button>
+        <button type="button" id="outroBotao">Recupera o valor salvo</button>
+        <button type="button" id="limpaDados">Limpar dados</button>
+        <button type="button" id="btnReload">Recarregar Página</button>
+    </form>
+    <script>
+        document.getElementById('botao').addEventListener('click', function() {
+        let valor = document.getElementById('nome').value;
+        console.log(valor);
+        localStorage.setItem('meuValor', valor);
+        });
+        document.getElementById('outroBotao').addEventListener('click', function() {
+        let valor = localStorage.getItem('meuValor');
+        alert(valor);
+        });
+        document.getElementById('limpaDados').addEventListener('click', function() {
+        localStorage.removeItem('meuValor');
+        });
+        document.getElementById("btnReload").addEventListener("click", function() {
+        location.reload();
+        });
+    </script>
+</body>
+</html>
